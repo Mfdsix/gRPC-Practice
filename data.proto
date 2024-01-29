@@ -1,7 +1,6 @@
 syntax = "proto3";
 
 message DataRequest {
-    string id = 1;
     string title = 2;
     string short_desc = 3;
 }
@@ -13,12 +12,12 @@ message Response {
 }
 
 message DataResponse {
-    repeated Response responses = 1;
+    repeated Response datas = 1;
 }
 
 message Empty {}
 
 service DataService {
     rpc getAll(Empty) returns (DataResponse) {}
-    rpc send(DataRequest) returns (Empty) {}
+    rpc add(DataRequest) returns (Empty) {}
 }

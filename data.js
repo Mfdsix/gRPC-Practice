@@ -5,7 +5,13 @@ const getAll = () => {
 }
 
 const add = (payload) => {
-    DATAS.push(payload)
+    const new_id = "dt-" + new Date().getTime()
+    DATAS.push({
+        id: new_id,
+        ...payload
+    })
+    
+    return new_id
 }
 
 module.exports = {
